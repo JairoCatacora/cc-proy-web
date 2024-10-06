@@ -1,68 +1,335 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Estilo general */
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Contenedor principal */
+.deuda-container, .record-pagos-container {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Encabezado de sección */
+.deuda-header, .record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 10px;
+}
+
+.deuda-header h2, .record-header h2 {
+  color: #4a90e2;
+  margin: 0;
+}
+
+.button-create {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button-create:hover {
+  background-color: #45a049;
+}
+
+/* Lista de deudas y registros */
+.deuda-list, .record-list {
+  margin: 20px 0;
+}
+
+.deuda-item, .record-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deuda-item:hover, .record-item:hover {
+  background-color: #f0f0f0;
+}
+
+.deuda-item strong, .record-item strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.deuda-item p, .record-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Acciones de los registros */
+.deuda-actions, .record-actions {
+  display: flex;
+  align-items: center;
+}
+
+.deuda-actions button, .record-actions button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botón de editar */
+.button-edit {
+  background-color: #ffcc00;
+}
+
+.button-edit:hover {
+  background-color: #ffb700;
+}
+
+/* Botón de eliminar */
+.button-delete {
+  background-color: #ff6666;
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #ff4d4d;
+}
+
+/* Formulario */
+.deuda-form, .record-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-top: 2px solid #4a90e2;
+  margin-top: 20px;
+}
+
+.deuda-form input, .record-form input, .deuda-form select, .record-form select {
+  padding: 10px;
+  margin: 5px 0;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.deuda-form input:focus, .record-form input:focus, .deuda-form select:focus, .record-form select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Botón de agregar/actualizar */
+.button-submit {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-submit:hover {
+  background-color: #357ab7;
+}
+
+/* Botón de cancelar */
+.button-cancel {
+  background-color: #999;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button-cancel:hover {
+  background-color: #777;
+}
+
+/* Título de la sección de formulario */
+h3 {
+  color: #4a90e2;
+}
+/* Estilo general */
+.inicio-container {
+  font-family: Arial, sans-serif;
+  background-color: #f3f8fc;
+  padding: 20px;
+}
+
+/* Encabezado */
+.header {
+  background-color: #003366; /* Azul oscuro */
+  color: #ffffff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 20px;
+}
+
+/* Banner informativo */
+.banner {
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding: 80px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0.95;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #003366;
+}
+
+.banner .button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #66b2ff; /* Celeste */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #003366;
+}
+
+.banner .button:hover {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+/* Sección de servicios */
+.services {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  flex: 0 0 30%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555555;
+}
+
+.service-card .button-blue {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #003366;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.service-card .button-blue:hover {
+  background-color: #66b2ff;
+  color: #003366;
+}
+
+/* Pie de página */
+.footer {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Ajustes adicionales */
 body {
   margin: 0;
+  background-color: #e6f2ff; /* Fondo celeste suave */
+}
+
+/* Ajustes adicionales para botones */
+.button-group {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #66b2ff; /* Celeste */
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #003366;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.button:hover {
+  background-color: #003366;
+  color: #ffffff;
 }
