@@ -1,11 +1,10 @@
 // src/service/api.js
-import axios from 'axios';
+import axios from "axios";
 
 // URL base de la API del backend
-const API_URL = 'http://34.232.98.170:8000/api'; // Cambia localhost por tu IP de AWS
+const API_URL = "http://98.84.207.66:4000"; // Cambia localhost por tu IP de AWS
 
 // Resto de tu código sigue igual...
-
 
 // Función para obtener todas las deudas
 export const getDeudas = async () => {
@@ -13,7 +12,7 @@ export const getDeudas = async () => {
     const response = await axios.get(`${API_URL}/deudas`);
     return response.data;
   } catch (error) {
-    console.error('Error obteniendo las deudas:', error);
+    console.error("Error obteniendo las deudas:", error);
     throw error;
   }
 };
@@ -25,7 +24,7 @@ export const createDeuda = async (deudaData) => {
     const response = await axios.post(`${API_URL}/deudas`, deudaData);
     return response.data;
   } catch (error) {
-    console.error('Error creando la deuda:', error);
+    console.error("Error creando la deuda:", error);
     throw error;
   }
 };
@@ -34,10 +33,13 @@ export const createDeuda = async (deudaData) => {
 export const updateDeuda = async (id_Deuda, updatedData) => {
   try {
     console.log("Actualizando deuda con ID:", id_Deuda, updatedData); // Imprime los datos que se envían
-    const response = await axios.put(`${API_URL}/deudas/${id_Deuda}`, updatedData);
+    const response = await axios.put(
+      `${API_URL}/deudas/${id_Deuda}`,
+      updatedData
+    );
     return response.data;
   } catch (error) {
-    console.error('Error actualizando la deuda:', error);
+    console.error("Error actualizando la deuda:", error);
     throw error;
   }
 };
@@ -48,7 +50,7 @@ export const deleteDeuda = async (id_Deuda) => {
     const response = await axios.delete(`${API_URL}/deudas/${id_Deuda}`);
     return response.data;
   } catch (error) {
-    console.error('Error eliminando la deuda:', error);
+    console.error("Error eliminando la deuda:", error);
     throw error;
   }
 };
@@ -59,7 +61,7 @@ export const getRecordPagos = async () => {
     const response = await axios.get(`${API_URL}/recordpago`);
     return response.data;
   } catch (error) {
-    console.error('Error obteniendo los registros de pago:', error);
+    console.error("Error obteniendo los registros de pago:", error);
     throw error;
   }
 };
@@ -71,7 +73,7 @@ export const createRecordPago = async (recordPagoData) => {
     const response = await axios.post(`${API_URL}/recordpago`, recordPagoData);
     return response.data;
   } catch (error) {
-    console.error('Error creando el registro de pago:', error);
+    console.error("Error creando el registro de pago:", error);
     throw error;
   }
 };
@@ -82,7 +84,7 @@ export const deleteRecordPago = async (id_Record) => {
     const response = await axios.delete(`${API_URL}/recordpago/${id_Record}`);
     return response.data;
   } catch (error) {
-    console.error('Error eliminando el registro de pago:', error);
+    console.error("Error eliminando el registro de pago:", error);
     throw error;
   }
 };
@@ -90,11 +92,95 @@ export const deleteRecordPago = async (id_Record) => {
 // Función para actualizar un registro de pago por ID
 export const updateRecordPago = async (id_Record, updatedData) => {
   try {
-    console.log("Actualizando registro de pago con ID:", id_Record, updatedData); // Imprime los datos que se envían
-    const response = await axios.put(`${API_URL}/recordpago/${id_Record}`, updatedData);
+    console.log(
+      "Actualizando registro de pago con ID:",
+      id_Record,
+      updatedData
+    ); // Imprime los datos que se envían
+    const response = await axios.put(
+      `${API_URL}/recordpago/${id_Record}`,
+      updatedData
+    );
     return response.data;
   } catch (error) {
-    console.error('Error actualizando el registro de pago:', error);
+    console.error("Error actualizando el registro de pago:", error);
+    throw error;
+  }
+};
+
+export const getTransacciones = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/transaccion`);
+    return response.data;
+  } catch (error) {
+    console.error("Error obteniendo las transacciones:", error);
+    throw error;
+  }
+};
+
+export const createTransaccion = async (transaccionData) => {
+  try {
+    console.log("Enviando datos de nueva transacción:", transaccionData); // Imprime los datos que se envían
+    const response = await axios.post(
+      `${API_URL}/transaccion`,
+      transaccionData
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error creando la transacción:", error);
+    throw error;
+  }
+};
+
+export const deleteTransaccion = async (id_t) => {
+  try {
+    const response = await axios.delete(`${API_URL}/transaccion/${id_t}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error eliminando la transacción:", error);
+    throw error;
+  }
+};
+
+export const createCliente = async (cliente) => {
+  try {
+    const response = await axios.post(`${API_URL}/clientes`, cliente);
+    return response.data;
+  } catch (error) {
+    console.error("Error obteniendo los clientes:", error);
+    throw error;
+  }
+};
+
+export const getClientes = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/clientes`);
+    return response.data;
+  } catch (error) {
+    console.error("Error obteniendo los clientes:", error);
+    throw error;
+  }
+};
+
+export const editarCliente = async (id_cliente, clienteData) => {
+  try {
+    const response = await axios.put(
+      `${API_URL}/clientes/${id_cliente}`,
+      clienteData
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error editando el cliente:", error);
+    throw error;
+  }
+};
+
+export const eliminarCliente = async (id_cliente) => {
+  try {
+    const response = await axios.delete(`${API_URL}/clientes/${id_cliente}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error eliminando el cliente:", error);
     throw error;
   }
 };

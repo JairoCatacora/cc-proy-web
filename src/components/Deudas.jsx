@@ -1,5 +1,5 @@
 // src/components/Deudas.js
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getDeudas, createDeuda, updateDeuda, deleteDeuda } from '../service/api';
 import '../index.css'; // Asegúrate de importar el CSS global
 

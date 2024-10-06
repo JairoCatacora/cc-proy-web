@@ -333,3 +333,230 @@ body {
   background-color: #003366;
   color: #ffffff;
 }
+
+/* Estilo general de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Estilo de las celdas */
+table th, table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* Encabezado de la tabla */
+table th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #357ab7;
+}
+
+/* Alternancia de color en las filas */
+table tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+table tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Texto en celdas de datos */
+table td {
+  color: #333;
+}
+
+/* Celdas de acciones con botones */
+.table-actions button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.table-actions .button-edit {
+  background-color: #ffcc00;
+}
+
+.table-actions .button-edit:hover {
+  background-color: #ffb700;
+}
+
+.table-actions .button-delete {
+  background-color: #ff6666;
+  color: white;
+}
+
+.table-actions .button-delete:hover {
+  background-color: #ff4d4d;
+}
+
+/* Estilo general para los botones en la tabla */
+table button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: red;
+  color: white;
+}
+
+/* Estilo general del formulario */
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo de los campos de entrada */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+}
+
+/* Enfoque en los campos de entrada */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #4a90e2;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Estilo de etiquetas */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo de los botones del formulario */
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover en el botón de enviar */
+form button:hover {
+  background-color: #357ab7;
+}
+
+/* Estilo de los botones secundarios (como cancelar) */
+form .button-cancel {
+  background-color: #999;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form .button-cancel:hover {
+  background-color: #777;
+}
+
+/* Estilo de mensajes de error */
+form .error {
+  color: #ff4d4d;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+form h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4a90e2;
+  text-align: center;
+}
+
+form input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #333;
+  appearance: none; /* Elimina el estilo predeterminado del navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: 95% center; /* Alinea el ícono del calendario a la derecha */
+  background-repeat: no-repeat;
+}
+
+form input[type="datetime-local"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.button-create-transaction {
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cliente-list {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 10px; 
+  padding: 20px; 
+}
+.cliente-item {
+  background-color: #f0f8ff; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 10px; 
+  flex: 1 1 200px; 
+  max-width: 300px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  text-align: center; 
+}
+.cliente-actions {
+  display: flex;
+  justify-content: center; 
+  gap: 5px; 
+}

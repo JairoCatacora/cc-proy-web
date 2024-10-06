@@ -1,5 +1,5 @@
 // src/components/RecordPagos.js
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getRecordPagos, createRecordPago, updateRecordPago, deleteRecordPago } from '../service/api';
 import '../index.css'; // Importar el CSS global para aplicar los estilos
 

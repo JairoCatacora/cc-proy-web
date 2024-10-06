@@ -1,5 +1,4 @@
 // src/pages/Inicio.js
-import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importar `useNavigate` para la navegación
 import '../index.css'; // Importar el archivo CSS
 
@@ -8,15 +7,12 @@ const Inicio = () => {
 
   return (
     <div className="inicio-container">
-      {/* Encabezado de la página */}
       <header className="header">
         <h1>Bienvenido a Banco Seguro</h1>
         <p>Tu confianza, nuestro compromiso.</p>
       </header>
 
-      {/* Sección principal */}
       <main className="main-content">
-        {/* Banner informativo */}
         <section
           className="banner"
           style={{
@@ -39,7 +35,6 @@ const Inicio = () => {
           </div>
         </section>
 
-        {/* Sección de servicios */}
         <section className="services">
           <div className="service-card">
             <h3>Servicios Bancarios</h3>
@@ -64,7 +59,6 @@ const Inicio = () => {
         </section>
       </main>
 
-      {/* Pie de página */}
       <footer className="footer">
         <p>© 2024 Banco Seguro. Todos los derechos reservados.</p>
       </footer>
