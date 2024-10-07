@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // URL base de la API del backend
-const API_URL = "http://98.84.207.66:4000"; // Cambia localhost por tu IP de AWS
+const API_URL = "http://lb-prod-276370512.us-east-1.elb.amazonaws.com:4000"; // Cambia localhost por tu IP de AWS
 
 // Resto de tu código sigue igual...
 
